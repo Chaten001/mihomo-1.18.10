@@ -69,7 +69,7 @@ func ParseProxyGroup(config map[string]any, proxyMap map[string]C.Proxy, provide
 	}
 
 	if groupOption.IncludeAllProviders {
-		groupOption.Use = AllProviders
+		groupOption.Use = append(groupOption.Use, AllProviders...)
 	}
 	if groupOption.IncludeAllProxies {
 		if groupOption.Filter != "" {
