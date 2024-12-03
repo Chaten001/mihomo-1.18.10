@@ -889,9 +889,6 @@ func parseProxies(cfg *RawConfig) (proxies map[string]C.Proxy, providersMap map[
 		AllProviders = append(AllProviders, name)
 	}
 
-	slices.Sort(AllProxies)
-	slices.Sort(AllProviders)
-
 	// parse proxy group
 	for idx, mapping := range groupsConfig {
 		group, err := outboundgroup.ParseProxyGroup(mapping, proxies, providersMap, AllProxies, AllProviders)
